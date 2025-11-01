@@ -1,0 +1,165 @@
+
+
+
+body {
+    background-color: #e9ecef; /* Latar belakang abu-abu muda */
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Panel Kontrol */
+.controls {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.controls input {
+    font-size: 1rem;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 250px;
+}
+
+.controls button {
+    font-size: 1rem;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+/* Kontainer Sertifikat Utama */
+.certificate-container {
+    /* Ukuran A4 Landscape (kurang lebih) */
+    width: 842px; 
+    height: 595px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 40px;
+    position: relative; /* Penting untuk elemen dekorasi */
+    overflow: hidden; /* Sembunyikan dekorasi yang meluap */
+    box-sizing: border-box; /* Pastikan padding termasuk dalam ukuran */
+}
+
+/* Konten di dalam sertifikat */
+.certificate-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: 3rem; /* 48px */
+    color: var(--color-gold);
+    margin: 20px 0 5px 0;
+}
+
+.subtitle {
+    font-size: 1rem; /* 16px */
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.body-text {
+    font-size: 0.9rem; /* 14.4px */
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#certificate-name {
+    font-family: var(--font-name);
+    font-size: 4rem; /* 64px */
+    color: #333;
+    margin: 10px 0;
+    min-height: 70px; /* Jaga ruang agar tidak loncat */
+}
+
+.signature-block {
+    margin-top: auto; /* Dorong ke bagian bawah */
+    padding-bottom: 20px;
+    
+    /* INI BAGIAN YANG DIUBAH */
+    text-align: center; /* Diubah dari 'right' ke 'center' */
+    width: 40%; /* Disesuaikan agar pas di tengah */
+    /* 'align-self' dan 'margin-right' dihapus agar mewarisi 'align-items: center' dari induknya */
+}
+
+
+.signature {
+    font-family: var(--font-name);
+    font-size: 2rem; /* 32px */
+    display: block;
+    border-bottom: 1px solid #777;
+    padding-bottom: 5px;
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* --- Elemen Dekorasi (Tiru dari) --- */
+
+/* Blok abu-abu di kiri atas */
+.deco-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100px;
+    background-color: #343a40; /* Abu-abu gelap */
+    /* Buat efek blok bertumpuk */
+    box-shadow: 40px 0 0 #adb5bd, 0px 40px 0 #868e96;
+}
+
+/* Garis di kanan atas */
+.deco-top-right {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 2px;
+    height: 150px;
+    background-color: #adb5bd;
+    box-shadow: 10px 10px 0 #adb5bd;
+}
+/* Garis di kiri bawah */
+.deco-bottom-left {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 2px;
+    height: 150px;
+    background-color: #adb5bd;
+    box-shadow: -10px -10px 0 #adb5bd;
+}
+.momo-trust-display-regular {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
