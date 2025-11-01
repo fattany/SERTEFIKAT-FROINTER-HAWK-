@@ -1,5 +1,11 @@
-
-
+/* Import Font */
+:root {
+    /* Menyesuaikan font */
+    --font-title: 'Merriweather', serif;
+    --font-name: 'Sacramento', cursive;
+    --font-body: 'Lato', sans-serif;
+    --color-gold: #b38600; /* Warna emas */
+}
 
 body {
     background-color: #e9ecef; /* Latar belakang abu-abu muda */
@@ -9,6 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    box-sizing: border-box; /* Tambahan untuk perhitungan yang lebih baik */
 }
 
 /* Panel Kontrol */
@@ -21,6 +28,11 @@ body {
     display: flex;
     gap: 15px;
     align-items: center;
+    
+    /* Tambahan agar bisa mengecil */
+    width: 100%;
+    max-width: 842px;
+    box-sizing: border-box;
 }
 
 .controls input {
@@ -28,7 +40,8 @@ body {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    min-width: 250px;
+    flex-grow: 1; /* Biarkan input mengambil sisa ruang */
+    min-width: 200px; /* Lebar minimum */
 }
 
 .controls button {
@@ -51,6 +64,10 @@ body {
     /* Ukuran A4 Landscape (kurang lebih) */
     width: 842px; 
     height: 595px;
+    
+    /* Tambahan agar bisa mengecil */
+    max-width: 100%;
+    
     background: #ffffff;
     border: 1px solid #ccc;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -58,14 +75,19 @@ body {
     position: relative; /* Penting untuk elemen dekorasi */
     overflow: hidden; /* Sembunyikan dekorasi yang meluap */
     box-sizing: border-box; /* Pastikan padding termasuk dalam ukuran */
+    
+    /* Konten di dalam sertifikat */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Konten di dalam sertifikat */
 .certificate-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%; /* Pastikan konten mengisi kontainer */
 }
 
 h1 {
@@ -73,12 +95,14 @@ h1 {
     font-size: 3rem; /* 48px */
     color: var(--color-gold);
     margin: 20px 0 5px 0;
+    text-align: center;
 }
 
 .subtitle {
     font-size: 1rem; /* 16px */
     letter-spacing: 2px;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .body-text {
@@ -94,18 +118,18 @@ h1 {
     color: #333;
     margin: 10px 0;
     min-height: 70px; /* Jaga ruang agar tidak loncat */
+    text-align: center;
+    word-break: break-word; /* Agar nama panjang tidak merusak layout */
 }
 
 .signature-block {
     margin-top: auto; /* Dorong ke bagian bawah */
     padding-bottom: 20px;
     
-    /* INI BAGIAN YANG DIUBAH */
+    /* Diubah untuk ke tengah */
     text-align: center; /* Diubah dari 'right' ke 'center' */
     width: 40%; /* Disesuaikan agar pas di tengah */
-    /* 'align-self' dan 'margin-right' dihapus agar mewarisi 'align-items: center' dari induknya */
 }
-
 
 .signature {
     font-family: var(--font-name);
@@ -125,8 +149,6 @@ h1 {
 
 
 /* --- Elemen Dekorasi (Tiru dari) --- */
-
-/* Blok abu-abu di kiri atas */
 .deco-top-left {
     position: absolute;
     top: 0;
@@ -134,11 +156,8 @@ h1 {
     width: 150px;
     height: 100px;
     background-color: #343a40; /* Abu-abu gelap */
-    /* Buat efek blok bertumpuk */
     box-shadow: 40px 0 0 #adb5bd, 0px 40px 0 #868e96;
 }
-
-/* Garis di kanan atas */
 .deco-top-right {
     position: absolute;
     top: 30px;
@@ -148,7 +167,6 @@ h1 {
     background-color: #adb5bd;
     box-shadow: 10px 10px 0 #adb5bd;
 }
-/* Garis di kiri bawah */
 .deco-bottom-left {
     position: absolute;
     bottom: 30px;
@@ -158,8 +176,76 @@ h1 {
     background-color: #adb5bd;
     box-shadow: -10px -10px 0 #adb5bd;
 }
-.momo-trust-display-regular {
-  font-family: "Momo Trust Display", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+
+/* ========================================= */
+/* === KODE BARU UNTUK TAMPILAN HP === */
+/* ========================================= */
+@media (max-width: 850px) { /* Target layar yang lebih kecil dari sertifikat */
+
+    body {
+        padding: 10px; /* Kurangi padding body */
+    }
+
+    /* Susun panel kontrol ke bawah */
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .controls input {
+        min-width: unset; /* Hapus lebar minimum */
+        width: 100%;
+    }
+
+    .certificate-container {
+        width: 100%; /* Buat lebar penuh */
+        height: auto; /* Biarkan tinggi menyesuaikan */
+        padding: 20px;
+        /* Kita pakai aspect-ratio untuk menjaga bentuk A4 */
+        aspect-ratio: 595 / 842; /* Dibalik karena HP itu potrait */
+    }
+
+    /* Kecilkan semua font agar muat */
+    h1 {
+        font-size: 1.8rem; /* 28.8px */
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    
+    .subtitle {
+        font-size: 0.7rem; /* 11.2px */
+        margin-bottom: 20px;
+    }
+
+    .body-text {
+        font-size: 0.65rem; /* 10.4px */
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    #certificate-name {
+        font-size: 2.5rem; /* 40px */
+        min-height: 40px;
+        margin: 5px 0;
+    }
+
+    .signature-block {
+        width: 60%; /* Sedikit lebih lebar di HP */
+        margin-right: 0;
+        padding-bottom: 10px;
+    }
+
+    .signature {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .title {
+        font-size: 0.7rem; /* 11.2px */
+    }
+    
+    /* Sembunyikan dekorasi di HP agar bersih & ringan */
+    .deco-top-left, .deco-top-right, .deco-bottom-left {
+        display: none;
+    }
 }
