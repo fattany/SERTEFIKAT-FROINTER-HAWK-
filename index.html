@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Sertifikat</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Sacramento&family=Lato&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="controls">
+        <label for="name-input">Masukkan Nama:</label>
+        <input type="text" id="name-input" placeholder="Masukkan nama di sini...">
+        <button id="download-btn">Download Sertifikat (PNG)</button>
+    </div>
+
+    <div class="certificate-container" id="certificate-container">
+        
+        <div class="deco-top-left"></div>
+        <div class="deco-top-right"></div>
+        <div class="deco-bottom-left"></div>
+
+        <div class="certificate-content">
+            <h1>SERTIFIKAT</h1>
+            <p class="subtitle">PENGHARGAAN AS FH MEMBER</p>
+            
+            <p class="body-text">Sebagai bentuk penghargaan, kami dengan tulus<br>menganugerahkan sertifikat ini kepada:</p>
+            
+            <h2 id="certificate-name">Masukkan nama</h2>
+            
+            <p class="body-text">Sebagai bentuk apresiasi atas partisipasi aktif dan 100 JAM BERSAMA FROINTER<br>HAWK yang diselenggarakan oleh Ketua angkatan IGNITE<br>pada tanggal 1 NOVEMBER 2025</p>
+            
+            <div class="signature-block">
+        
+                <span class="signature .momo-trust-display-regular">FATTAN</span>
+                <span class="title">Ketua FROINTER HAWK</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
