@@ -68,7 +68,11 @@ body {
     /* Tambahan agar bisa mengecil */
     max-width: 100%;
     
-    background: #ffffff;
+    /* Ganti baris 'background: #ffffff;' dengan 4 baris ini */
+    background-image: url('LATAR SERTI.png'); /* <-- PASTIKAN NAMA SAMA DENGAN FILE YANG DI-UPLOAD */
+    background-size: cover;            /* Membuat gambar menutupi seluruh area sertifikat */
+    background-position: center;         /* Memusatkan gambar */
+    background-repeat: no-repeat;        /* Jangan ulangi gambar jika ukurannya kecil */
     border: 1px solid #ccc;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     padding: 40px;
@@ -249,3 +253,4 @@ h1 {
         display: none;
     }
 }
+
